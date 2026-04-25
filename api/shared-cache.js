@@ -3,8 +3,13 @@
 // No npm package needed — pure fetch() calls
 // Setup: upstash.com → create free Redis DB → copy 2 env vars to Vercel
 
-const REDIS_URL   = process.env.UPSTASH_REDIS_REST_URL;
-const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
+// Supports Vercel KV, Upstash, or plain Redis env var names
+const REDIS_URL   = process.env.UPSTASH_REDIS_REST_URL
+                 || process.env.KV_REST_API_URL
+                 || process.env.REDIS_URL;
+const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN
+                 || process.env.KV_REST_API_TOKEN
+                 || process.env.REDIS_TOKEN;
 const INDEX_KEY   = "agentflow:index";
 const MAX_RUNS    = 50;
 

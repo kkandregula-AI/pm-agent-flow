@@ -321,7 +321,7 @@ function HistoryPanel({ onLoad, onClose, kvOk }) {
         {tab==="team" && !kvOk && (
           <div style={{margin:"12px 16px",padding:"10px 14px",background:"#F59E0B11",border:"1px solid #F59E0B33",borderRadius:"8px",fontSize:"11px",color:"#FCD34D",fontFamily:"'IBM Plex Mono',monospace",lineHeight:"1.6"}}>
             ⚠ Team cache not set up yet.<br/>
-            <span style={{color:"#64748b"}}>Go to <code style={{color:"#10B981"}}>upstash.com</code> → create free Redis DB → add 2 env vars to Vercel.</span>
+            <span style={{color:"#64748b"}}>Add REDIS_TOKEN env var to Vercel → Settings → Environment Variables → redeploy.</span>
           </div>
         )}
 
